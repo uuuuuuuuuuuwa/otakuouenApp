@@ -9,9 +9,10 @@ import UIKit
 import AVFoundation
 
 
-class ViewController: UIViewController,UITableViewDelegate {
+class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate {
     
     //StoryBoardで扱う TableViewを宣言
+    var addButtonItem: UIBarButtonItem!
     
     @IBOutlet var table: UITableView!
     
@@ -23,18 +24,71 @@ class ViewController: UIViewController,UITableViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        addButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(addBarbuttonTapped(_:)))
+        
+        
+        self.navigationItem.rightBarButtonItems = [addButtonItem]
+        
+        
+        
         //テーブルビューのデータソースメソッドはviewcontrollerクラスに書くよ、と言う設定
         table.dataSource = self
         table.delegate = self
         table.tableFooterView = UIView(frame: .zero)
         
         
-        NameArray = []
+        //NameArray = []
         
-    // ふやす
+        // ふやす
         //　プラスマークを押したときにコードが読まれる
-        NameArray.append("+")
-        table.reloadData()
+        // NameArray.append("+")
+        //table.reloadData()
+    }
+    
+    
+    @objc func addBarbuttonTapped(_ sender: UIBarButtonItem){
+        print("プラスボタンが押された")
+        var inputText: String!
+        
+        let alert = UIAlertController(
+            title: "Edit Name",
+            message: "Enter new name",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                inputText = textField.text
+                //                    alertTextField = textField
+                //                    self.NameArray.append("+")
+                //                    self.table.reloadData()
+                // textField.placeholder = "Mike"
+                // textField.isSecureTextEntry = true
+            })
+        alert.addAction(
+            UIAlertAction(
+                title: "Cancel",
+                style: UIAlertAction.Style.cancel,
+                handler: nil))
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: {(_) -> Void in
+                    print(inputText)
+                    self.NameArray.append(inputText)
+                    self.table.reloadData()
+                }
+            )
+            //            { _ in
+            //                    if let text = alertTextField!.text {
+            //                        self.NameArray.append(text)
+            //                        self.table.reloadData()
+            //                    }}
+            
+        )
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     
@@ -93,10 +147,10 @@ extension ViewController: UITableViewDataSource{
                                        preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "削除", style: .default, handler: { (_) in
             self.NameArray.remove(at: indexPath.row)
-           // tableView.beginUpdates()
+            // tableView.beginUpdates()
             self.table.deleteRows(at: [indexPath], with: .automatic)
             self.table.reloadData()
-        //tableView.endUpdates()
+            //tableView.endUpdates()
         }))
         dialog.addAction(UIAlertAction(title: "戻る", style: .cancel, handler: nil))
         self.present(dialog, animated: true, completion: nil)

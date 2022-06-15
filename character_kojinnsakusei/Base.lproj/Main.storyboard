@@ -35,7 +35,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="bJc-Bj-8yu"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="table" destination="W5J-3n-Peq" id="EHw-tt-CZa"/>
                         <segue destination="Bpo-6N-fHQ" kind="show" identifier="toContents" id="SJh-HH-iHQ"/>
@@ -131,6 +133,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqI-mJ-Beb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4075" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B96-VI-Yyh">
+            <objects>
+                <viewController id="Y6M-s9-UQM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M5g-3M-cOF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oEa-WY-tVy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXd-A4-POI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-917" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vj-An-NcP">

@@ -73,9 +73,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
             UIAlertAction(
                 title: "OK",
                 style: .default,
-                handler: {(_) -> Void in
+                handler: {text -> Void in
                     print(inputText)
-                    self.NameArray.append(inputText)
+                  //  alert.textFields?.first.text
+                    self.NameArray.append(alert.textFields?.first?.text ?? "")
                     self.table.reloadData()
                 }
             )

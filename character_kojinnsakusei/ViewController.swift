@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 
 
+
 class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate {
     
     //StoryBoardで扱う TableViewを宣言
@@ -80,11 +81,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
                     self.table.reloadData()
                 }
             )
-            //            { _ in
-            //                    if let text = alertTextField!.text {
-            //                        self.NameArray.append(text)
-            //                        self.table.reloadData()
-            //                    }}
+         
             
         )
         

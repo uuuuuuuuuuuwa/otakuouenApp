@@ -21,6 +21,7 @@
 		26228A6027461E6F00D09326 /* 斉木楠雄のΨ難.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A5F27461E6F00D09326 /* 斉木楠雄のΨ難.jpeg */; };
 		26228A6227461E7A00D09326 /* ポケモン.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A6127461E7A00D09326 /* ポケモン.jpeg */; };
 		26228A64274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A63274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg */; };
+		26F63CAA28618C6600C58FDA /* YahooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F63CA928618C6600C58FDA /* YahooViewController.swift */; };
 		26F67F57283CAA120063672A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F67F56283CAA120063672A /* ViewController2.swift */; };
 		26F67F59283DF45F0063672A /* ViewControllerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F67F58283DF45F0063672A /* ViewControllerSecond.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		26228A5F27461E6F00D09326 /* 斉木楠雄のΨ難.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "斉木楠雄のΨ難.jpeg"; sourceTree = "<group>"; };
 		26228A6127461E7A00D09326 /* ポケモン.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ポケモン.jpeg"; sourceTree = "<group>"; };
 		26228A63274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小林さんちのメイドラゴンs  ２.jpeg"; sourceTree = "<group>"; };
+		26F63CA928618C6600C58FDA /* YahooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooViewController.swift; sourceTree = "<group>"; };
 		26F67F56283CAA120063672A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		26F67F58283DF45F0063672A /* ViewControllerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSecond.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				26228A2A273CDD1000D09326 /* SceneDelegate.swift */,
 				26228A582744D33000D09326 /* ContentsViewController.swift */,
 				26228A2C273CDD1000D09326 /* ViewController.swift */,
+				26F63CA928618C6600C58FDA /* YahooViewController.swift */,
 				26228A2E273CDD1000D09326 /* Main.storyboard */,
 				26F67F58283DF45F0063672A /* ViewControllerSecond.swift */,
 				26F67F56283CAA120063672A /* ViewController2.swift */,
@@ -286,6 +289,7 @@
 				26F67F57283CAA120063672A /* ViewController2.swift in Sources */,
 				26228A592744D33000D09326 /* ContentsViewController.swift in Sources */,
 				26228A2D273CDD1000D09326 /* ViewController.swift in Sources */,
+				26F63CAA28618C6600C58FDA /* YahooViewController.swift in Sources */,
 				26228A29273CDD1000D09326 /* AppDelegate.swift in Sources */,
 				26F67F59283DF45F0063672A /* ViewControllerSecond.swift in Sources */,
 				26228A2B273CDD1000D09326 /* SceneDelegate.swift in Sources */,

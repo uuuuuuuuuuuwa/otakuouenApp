@@ -17,6 +17,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
     
     @IBOutlet var table: UITableView!
     
+    var name: String!
+    var image: String!
+    
     var NameArray = [String]()
     var selectedIndex = 0
     var array = [Int](0..<10)
@@ -26,93 +29,26 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
         // Do any additional setup after loading the view.
         
         addButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(addBarbuttonTapped(_:)))
-        
-        
         self.navigationItem.rightBarButtonItems = [addButtonItem]
-        
-        
-        
         //テーブルビューのデータソースメソッドはviewcontrollerクラスに書くよ、と言う設定
         table.dataSource = self
         table.delegate = self
         table.tableFooterView = UIView(frame: .zero)
         
-        
-        //NameArray = []
-        
-        // ふやす
-        //　プラスマークを押したときにコードが読まれる
-        // NameArray.append("+")
-        //table.reloadData()
+        NameArray = ["食べ物","ファッション","あ"]
     }
-    
-    
-    @objc func addBarbuttonTapped(_ sender: UIBarButtonItem){
-        print("プラスボタンが押された")
-        var inputText: String!
-        
-        let alert = UIAlertController(
-            title: "Edit Name",
-            message: "Enter new name",
-            preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addTextField(
-            configurationHandler: {(textField: UITextField!) in
-                inputText = textField.text
-                //                    alertTextField = textField
-                //                    self.NameArray.append("+")
-                //                    self.table.reloadData()
-                // textField.placeholder = "Mike"
-                // textField.isSecureTextEntry = true
-            })
-        alert.addAction(
-            UIAlertAction(
-                title: "Cancel",
-                style: UIAlertAction.Style.cancel,
-                handler: nil))
-        alert.addAction(
-            UIAlertAction(
-                title: "OK",
-                style: .default,
-                handler: {text -> Void in
-                    print(inputText)
-                  //  alert.textFields?.first.text
-                    self.NameArray.append(alert.textFields?.first?.text ?? "")
-                    self.table.reloadData()
-                }
-            )
-         
-            
-        )
-        
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
     
     //セルの数を設定
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 10
-        
         //セルの数をsongNameArrayの数にする
         return NameArray.count
     }
     
     //ID付きのセルを取得して、セル付属textLabelに「テスト」と表示させてみる
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        
-        
         cell?.textLabel?.text = NameArray[indexPath.row]
-        
-        
-        //     cell?.textLabel?.text = "tesuto"
         return cell!
-        
-        
-        
     }
     
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath)  {
@@ -155,7 +91,40 @@ extension ViewController: UITableViewDataSource{
     }
 }
 
-
-
+// プラスボタンの処理
+extension ViewController {
+    @objc func addBarbuttonTapped(_ sender: UIBarButtonItem){
+        print("プラスボタンが押された")
+        var inputText: String!
+        
+        let alert = UIAlertController(
+            title: "Edit Name",
+            message: "Enter new name",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                inputText = textField.text
+            })
+        alert.addAction(
+            UIAlertAction(
+                title: "Cancel",
+                style: UIAlertAction.Style.cancel,
+                handler: nil))
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: {text -> Void in
+                    print(inputText)
+                    //  alert.textFields?.first.text
+                    self.NameArray.append(alert.textFields?.first?.text ?? "")
+                    self.table.reloadData()
+                }
+            )
+        )
+        self.present(alert, animated: true, completion: nil)
+    }
+}
 
 

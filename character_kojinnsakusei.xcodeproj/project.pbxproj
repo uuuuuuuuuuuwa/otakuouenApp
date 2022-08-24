@@ -16,11 +16,9 @@
 		26228A4A273CDD1700D09326 /* character_kojinnsakuseiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A49273CDD1700D09326 /* character_kojinnsakuseiUITests.swift */; };
 		26228A4C273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A4B273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift */; };
 		26228A592744D33000D09326 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A582744D33000D09326 /* ContentsViewController.swift */; };
-		26228A5B2744D75700D09326 /* 進撃の巨人.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A5A2744D75700D09326 /* 進撃の巨人.jpeg */; };
-		26228A5D27461E5400D09326 /* 七つの大罪.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A5C27461E5400D09326 /* 七つの大罪.jpeg */; };
-		26228A6027461E6F00D09326 /* 斉木楠雄のΨ難.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A5F27461E6F00D09326 /* 斉木楠雄のΨ難.jpeg */; };
-		26228A6227461E7A00D09326 /* ポケモン.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A6127461E7A00D09326 /* ポケモン.jpeg */; };
-		26228A64274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26228A63274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg */; };
+		26786C532875545200EB495B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 26786C522875545200EB495B /* Realm */; };
+		26786C552875545200EB495B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26786C542875545200EB495B /* RealmSwift */; };
+		26786C572875552E00EB495B /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26786C562875552E00EB495B /* item.swift */; };
 		26F63CAA28618C6600C58FDA /* YahooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F63CA928618C6600C58FDA /* YahooViewController.swift */; };
 		26F67F57283CAA120063672A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F67F56283CAA120063672A /* ViewController2.swift */; };
 		26F67F59283DF45F0063672A /* ViewControllerSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F67F58283DF45F0063672A /* ViewControllerSecond.swift */; };
@@ -57,11 +55,7 @@
 		26228A49273CDD1700D09326 /* character_kojinnsakuseiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character_kojinnsakuseiUITests.swift; sourceTree = "<group>"; };
 		26228A4B273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character_kojinnsakuseiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		26228A582744D33000D09326 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
-		26228A5A2744D75700D09326 /* 進撃の巨人.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "進撃の巨人.jpeg"; sourceTree = "<group>"; };
-		26228A5C27461E5400D09326 /* 七つの大罪.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "七つの大罪.jpeg"; sourceTree = "<group>"; };
-		26228A5F27461E6F00D09326 /* 斉木楠雄のΨ難.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "斉木楠雄のΨ難.jpeg"; sourceTree = "<group>"; };
-		26228A6127461E7A00D09326 /* ポケモン.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ポケモン.jpeg"; sourceTree = "<group>"; };
-		26228A63274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小林さんちのメイドラゴンs  ２.jpeg"; sourceTree = "<group>"; };
+		26786C562875552E00EB495B /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		26F63CA928618C6600C58FDA /* YahooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooViewController.swift; sourceTree = "<group>"; };
 		26F67F56283CAA120063672A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		26F67F58283DF45F0063672A /* ViewControllerSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSecond.swift; sourceTree = "<group>"; };
@@ -72,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26786C552875545200EB495B /* RealmSwift in Frameworks */,
+				26786C532875545200EB495B /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,15 +116,11 @@
 				26228A582744D33000D09326 /* ContentsViewController.swift */,
 				26228A2C273CDD1000D09326 /* ViewController.swift */,
 				26F63CA928618C6600C58FDA /* YahooViewController.swift */,
+				26786C562875552E00EB495B /* item.swift */,
 				26228A2E273CDD1000D09326 /* Main.storyboard */,
 				26F67F58283DF45F0063672A /* ViewControllerSecond.swift */,
 				26F67F56283CAA120063672A /* ViewController2.swift */,
 				26228A31273CDD1600D09326 /* Assets.xcassets */,
-				26228A5A2744D75700D09326 /* 進撃の巨人.jpeg */,
-				26228A5C27461E5400D09326 /* 七つの大罪.jpeg */,
-				26228A63274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg */,
-				26228A5F27461E6F00D09326 /* 斉木楠雄のΨ難.jpeg */,
-				26228A6127461E7A00D09326 /* ポケモン.jpeg */,
 				26228A36273CDD1600D09326 /* Info.plist */,
 			);
 			path = character_kojinnsakusei;
@@ -167,6 +159,10 @@
 			dependencies = (
 			);
 			name = character_kojinnsakusei;
+			packageProductDependencies = (
+				26786C522875545200EB495B /* Realm */,
+				26786C542875545200EB495B /* RealmSwift */,
+			);
 			productName = character_kojinnsakusei;
 			productReference = 26228A25273CDD1000D09326 /* character_kojinnsakusei.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 26228A1C273CDD1000D09326;
+			packageReferences = (
+				26786C512875545200EB495B /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 26228A26273CDD1000D09326 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,13 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26228A6027461E6F00D09326 /* 斉木楠雄のΨ難.jpeg in Resources */,
-				26228A6227461E7A00D09326 /* ポケモン.jpeg in Resources */,
-				26228A64274E139300D09326 /* 小林さんちのメイドラゴンs  ２.jpeg in Resources */,
-				26228A5D27461E5400D09326 /* 七つの大罪.jpeg in Resources */,
 				26228A32273CDD1600D09326 /* Assets.xcassets in Resources */,
 				26228A30273CDD1000D09326 /* Main.storyboard in Resources */,
-				26228A5B2744D75700D09326 /* 進撃の巨人.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +284,7 @@
 				26228A592744D33000D09326 /* ContentsViewController.swift in Sources */,
 				26228A2D273CDD1000D09326 /* ViewController.swift in Sources */,
 				26F63CAA28618C6600C58FDA /* YahooViewController.swift in Sources */,
+				26786C572875552E00EB495B /* item.swift in Sources */,
 				26228A29273CDD1000D09326 /* AppDelegate.swift in Sources */,
 				26F67F59283DF45F0063672A /* ViewControllerSecond.swift in Sources */,
 				26228A2B273CDD1000D09326 /* SceneDelegate.swift in Sources */,
@@ -644,6 +639,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26786C512875545200EB495B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26786C522875545200EB495B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26786C512875545200EB495B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		26786C542875545200EB495B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26786C512875545200EB495B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 26228A1D273CDD1000D09326 /* Project object */;
 }

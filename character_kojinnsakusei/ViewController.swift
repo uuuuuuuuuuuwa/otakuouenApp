@@ -7,13 +7,13 @@
 
 import UIKit
 import AVFoundation
-
+import RealmSwift
 
 
 class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate {
     
     //StoryBoardで扱う TableViewを宣言
-    var addButtonItem: UIBarButtonItem!
+  //  var addButtonItem: UIBarButtonItem!
     
     @IBOutlet var table: UITableView!
     
@@ -24,35 +24,96 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
     var selectedIndex = 0
     var array = [Int](0..<10)
     
+    let realm = try! Realm()
+    var items: [Item] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        addButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(addBarbuttonTapped(_:)))
-        self.navigationItem.rightBarButtonItems = [addButtonItem]
+//        addButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(addBarbuttonTapped(_:)))
+       // self.navigationItem.rightBarButtonItems = [addButtonItem]
         //テーブルビューのデータソースメソッドはviewcontrollerクラスに書くよ、と言う設定
         table.dataSource = self
         table.delegate = self
         table.tableFooterView = UIView(frame: .zero)
         
+        
+        realm.objects(Favorite.self).first?.items
+        
+        
+        
         NameArray = ["食べ物","ファッション","あ"]
+    }
+    
+    // プラスボタンの処理
+
+    //extension ViewController {
+    @objc func addBarbuttonTapped(_ sender: UIBarButtonItem){
+        print("プラスボタンが押された")
+        var inputText: String!
+
+        let alert = UIAlertController(
+            title: "Edit Name",
+            message: "Enter new name",
+            preferredStyle: UIAlertController.Style.alert)
+
+        alert.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                inputText = textField.text
+            })
+        alert.addAction(
+            UIAlertAction(
+                title: "Cancel",
+                style: UIAlertAction.Style.cancel,
+                handler: nil))
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: {text -> Void in
+                    print(inputText)
+                    //  alert.textFields?.first.text
+
+                    // self.NameArray.append(alert.textFields?.first?.text ?? "")
+                    // self.table.reloadData()
+
+                    //Reaim 追加
+
+                    let item = Item()
+
+                    try! self.realm.write(){
+                        if self.items == nil {
+                            let favorite = Favorite()
+                            favorite.items.append(item)
+                            self.realm.add(favorite)
+                            self.items = self.realm.objects(Favorite.self).first?.items
+                            print(self.items!)
+
+                        } else {
+                            self.items.append(item)
+                        }
+                    }
+                }
+            )
+        )
+        self.present(alert, animated: true, completion: nil)
     }
     
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //セルの数をsongNameArrayの数にする
-        return NameArray.count
+        return items.count
     }
     
     //ID付きのセルを取得して、セル付属textLabelに「テスト」と表示させてみる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = NameArray[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row].name
+        return cell
     }
     
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath)  {
-        print("\(NameArray[indexPath.row])が選ばれました！")
+        print("\(items[indexPath.row])が選ばれました！")
         selectedIndex = indexPath.row
         
         performSegue(withIdentifier: "toContents", sender: nil)
@@ -80,7 +141,7 @@ extension ViewController: UITableViewDataSource{
                                        message: "本当に削除しますか？",
                                        preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "削除", style: .default, handler: { (_) in
-            self.NameArray.remove(at: indexPath.row)
+            self.items.remove(at: indexPath.row)
             // tableView.beginUpdates()
             self.table.deleteRows(at: [indexPath], with: .automatic)
             self.table.reloadData()
@@ -89,42 +150,9 @@ extension ViewController: UITableViewDataSource{
         dialog.addAction(UIAlertAction(title: "戻る", style: .cancel, handler: nil))
         self.present(dialog, animated: true, completion: nil)
     }
-}
-
-// プラスボタンの処理
-extension ViewController {
-    @objc func addBarbuttonTapped(_ sender: UIBarButtonItem){
-        print("プラスボタンが押された")
-        var inputText: String!
-        
-        let alert = UIAlertController(
-            title: "Edit Name",
-            message: "Enter new name",
-            preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addTextField(
-            configurationHandler: {(textField: UITextField!) in
-                inputText = textField.text
-            })
-        alert.addAction(
-            UIAlertAction(
-                title: "Cancel",
-                style: UIAlertAction.Style.cancel,
-                handler: nil))
-        alert.addAction(
-            UIAlertAction(
-                title: "OK",
-                style: .default,
-                handler: {text -> Void in
-                    print(inputText)
-                    //  alert.textFields?.first.text
-                    self.NameArray.append(alert.textFields?.first?.text ?? "")
-                    self.table.reloadData()
-                }
-            )
-        )
-        self.present(alert, animated: true, completion: nil)
-    }
+    
+    
+    
 }
 
 

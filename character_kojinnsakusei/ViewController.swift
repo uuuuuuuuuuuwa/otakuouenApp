@@ -23,13 +23,16 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
     var NameArray = [String]()
     var selectedIndex = 0
     var array = [Int](0..<10)
+    var itemName: String!
     
     let realm = try! Realm()
-    var items: [Item] = []
+    var items: Results<Item>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+      
 //        addButtonItem = UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(addBarbuttonTapped(_:)))
        // self.navigationItem.rightBarButtonItems = [addButtonItem]
         //テーブルビューのデータソースメソッドはviewcontrollerクラスに書くよ、と言う設定
@@ -37,12 +40,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
         table.delegate = self
         table.tableFooterView = UIView(frame: .zero)
         
-        
-        realm.objects(Favorite.self).first?.items
-        
-        
-        
+        let result = realm.objects(Item.self)
+        items = result
         NameArray = ["食べ物","ファッション","あ"]
+        self.table.reloadData()
     }
     
     // プラスボタンの処理
@@ -86,11 +87,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
                             let favorite = Favorite()
                             favorite.items.append(item)
                             self.realm.add(favorite)
-                            self.items = self.realm.objects(Favorite.self).first?.items
+                            self.items = self.realm.objects(Item.self)
                             print(self.items!)
 
                         } else {
-                            self.items.append(item)
+//                            self.items.append(item)
                         }
                     }
                 }
@@ -102,7 +103,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //セルの数をsongNameArrayの数にする
-        return items.count
+        return realm.objects(Item.self).count
     }
     
     //ID付きのセルを取得して、セル付属textLabelに「テスト」と表示させてみる
@@ -115,13 +116,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITextFieldDelegate 
     func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath)  {
         print("\(items[indexPath.row])が選ばれました！")
         selectedIndex = indexPath.row
+        itemName = items[indexPath.row].name
         
         performSegue(withIdentifier: "toContents", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let contentVC = segue.destination as? ContentsViewController
         contentVC?.selectedlndex = selectedIndex
-        
+        contentVC?.itemTitle = itemName
     }
 }
 extension ViewController: UITableViewDataSource{
@@ -141,7 +143,8 @@ extension ViewController: UITableViewDataSource{
                                        message: "本当に削除しますか？",
                                        preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "削除", style: .default, handler: { (_) in
-            self.items.remove(at: indexPath.row)
+            // 後で書き換える
+//            self.items.remove(at: indexPath.row)
             // tableView.beginUpdates()
             self.table.deleteRows(at: [indexPath], with: .automatic)
             self.table.reloadData()

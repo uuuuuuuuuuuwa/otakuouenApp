@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-
+import RealmSwift
 
 class ContentsViewController: UIViewController {
     
@@ -15,8 +15,9 @@ class ContentsViewController: UIViewController {
     @IBOutlet var label:UILabel!
     
     var imageArray = ["進撃の巨人.jpeg","小林さんちのメイドラゴンs  ２.jpeg","ポケモン.jpeg","七つの大罪.jpeg","斉木楠雄のΨ難.jpeg"]
-    
-    var contemtsArray = ["こんにちは","hello","yaaaa","waaaaa","booo!"]
+//
+//    var contemtsArray = ["こんにちは","hello","yaaaa","waaaaa","booo!"]
+    var itemTitle: String!
     
     var selectedlndex: Int = 0
     
@@ -24,12 +25,21 @@ class ContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = contemtsArray[selectedlndex]
+        label.text = itemTitle
         
         imageView.image = UIImage(named: imageArray[selectedlndex])
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        let realm = try! Realm()
+//        let result = realm.objects(Item.self).indexOf
+//        label.text = result.name
+    }
+    
     func setupLabelFrame() {
         var fixedFrame = self.label.frame
         self.label.sizeToFit()

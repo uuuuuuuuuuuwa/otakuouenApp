@@ -46,6 +46,8 @@ class YahooViewController: UIViewController, UISearchBarDelegate, UITableViewDat
                 self.realm.add(item)
                 print(item)
                 
+           
+                
                 
 //                if self.items == nil {
 //                    let favorite = Favorite()

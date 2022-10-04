@@ -14,11 +14,9 @@ class ContentsViewController: UIViewController {
     @IBOutlet var imageView:UIImageView!
     @IBOutlet var label:UILabel!
     
-    var imageArray = ["進撃の巨人.jpeg","小林さんちのメイドラゴンs  ２.jpeg","ポケモン.jpeg","七つの大罪.jpeg","斉木楠雄のΨ難.jpeg"]
-//
-//    var contemtsArray = ["こんにちは","hello","yaaaa","waaaaa","booo!"]
-    var itemTitle: String!
     
+    var itemTitle: String!
+    var itemImage: UIImage!
     var selectedlndex: Int = 0
     
     
@@ -27,18 +25,11 @@ class ContentsViewController: UIViewController {
         
         label.text = itemTitle
         
-        imageView.image = UIImage(named: imageArray[selectedlndex])
-        
+        imageView.image = itemImage
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//        let realm = try! Realm()
-//        let result = realm.objects(Item.self).indexOf
-//        label.text = result.name
-    }
+    
     
     func setupLabelFrame() {
         var fixedFrame = self.label.frame

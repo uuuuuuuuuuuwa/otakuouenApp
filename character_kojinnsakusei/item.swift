@@ -7,6 +7,7 @@ class Item: Object {
     @objc dynamic var apitype: String = ""
     @objc dynamic var id: String = ""
     @objc dynamic var name:String = ""
+    @objc dynamic var image:String = ""
     
 }
 
@@ -14,7 +15,6 @@ class Item: Object {
 
 
 class Favorite: Object {
-    
     @objc dynamic var name: String = ""
     let items = RealmSwift.List<Item>()
 }

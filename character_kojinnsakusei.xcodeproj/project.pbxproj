@@ -16,6 +16,9 @@
 		26228A4A273CDD1700D09326 /* character_kojinnsakuseiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A49273CDD1700D09326 /* character_kojinnsakuseiUITests.swift */; };
 		26228A4C273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A4B273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift */; };
 		26228A592744D33000D09326 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26228A582744D33000D09326 /* ContentsViewController.swift */; };
+		264397B428D1986A004FC418 /* 星アイコン8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 264397B328D1986A004FC418 /* 星アイコン8.jpeg */; };
+		264397B628D19873004FC418 /* ホームのフリーアイコン素材.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 264397B528D19873004FC418 /* ホームのフリーアイコン素材.jpeg */; };
+		264397B828EBF7CF004FC418 /* RakutenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264397B728EBF7CF004FC418 /* RakutenViewController.swift */; };
 		26786C532875545200EB495B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 26786C522875545200EB495B /* Realm */; };
 		26786C552875545200EB495B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26786C542875545200EB495B /* RealmSwift */; };
 		26786C572875552E00EB495B /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26786C562875552E00EB495B /* item.swift */; };
@@ -55,6 +58,9 @@
 		26228A49273CDD1700D09326 /* character_kojinnsakuseiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character_kojinnsakuseiUITests.swift; sourceTree = "<group>"; };
 		26228A4B273CDD1700D09326 /* character_kojinnsakuseiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character_kojinnsakuseiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		26228A582744D33000D09326 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
+		264397B328D1986A004FC418 /* 星アイコン8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "星アイコン8.jpeg"; sourceTree = "<group>"; };
+		264397B528D19873004FC418 /* ホームのフリーアイコン素材.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ホームのフリーアイコン素材.jpeg"; sourceTree = "<group>"; };
+		264397B728EBF7CF004FC418 /* RakutenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakutenViewController.swift; sourceTree = "<group>"; };
 		26786C562875552E00EB495B /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		26F63CA928618C6600C58FDA /* YahooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooViewController.swift; sourceTree = "<group>"; };
 		26F67F56283CAA120063672A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				26228A2E273CDD1000D09326 /* Main.storyboard */,
 				26F67F58283DF45F0063672A /* ViewControllerSecond.swift */,
 				26F67F56283CAA120063672A /* ViewController2.swift */,
+				264397B728EBF7CF004FC418 /* RakutenViewController.swift */,
+				264397B328D1986A004FC418 /* 星アイコン8.jpeg */,
+				264397B528D19873004FC418 /* ホームのフリーアイコン素材.jpeg */,
 				26228A31273CDD1600D09326 /* Assets.xcassets */,
 				26228A36273CDD1600D09326 /* Info.plist */,
 			);
@@ -254,7 +263,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264397B428D1986A004FC418 /* 星アイコン8.jpeg in Resources */,
 				26228A32273CDD1600D09326 /* Assets.xcassets in Resources */,
+				264397B628D19873004FC418 /* ホームのフリーアイコン素材.jpeg in Resources */,
 				26228A30273CDD1000D09326 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +299,7 @@
 				26228A29273CDD1000D09326 /* AppDelegate.swift in Sources */,
 				26F67F59283DF45F0063672A /* ViewControllerSecond.swift in Sources */,
 				26228A2B273CDD1000D09326 /* SceneDelegate.swift in Sources */,
+				264397B828EBF7CF004FC418 /* RakutenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,14 @@ class Item: Object {
     
 }
 
-
+//class Result: Object {
+//    @objc dynamic var apitype: String = ""
+//    @objc dynamic var id: String = ""
+//    @objc dynamic var name:String = ""
+//    @objc dynamic var image:String = ""
+//
+//}
+//
 
 
 class Favorite: Object {
